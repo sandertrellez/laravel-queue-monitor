@@ -1,0 +1,8 @@
+<?php
+
+return alextrellez\Fixer\Config::make()
+    ->in(__DIR__)
+    ->preset(
+        new alextrellez\Fixer\Presets\PrettyLaravel()
+    )
+    ->out();
