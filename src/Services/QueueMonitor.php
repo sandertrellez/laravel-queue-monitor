@@ -11,6 +11,7 @@ use Illuminate\Queue\Events\JobProcessing;
 use Illuminate\Support\Carbon;
 use alextrellez\QueueMonitor\Models\Contracts\MonitorContract;
 use alextrellez\QueueMonitor\Traits\IsMonitored;
+use Illuminate\Http\Request;
 use Throwable;
 
 class QueueMonitor
@@ -130,8 +131,9 @@ class QueueMonitor
                 $payload = json_encode($data->request->query->all());
                 break;
             case 'GarantiaJob':
-            case 'CarteraJob':
             case 'GestorInmaterialJob':
+            case 'CarteraJob':
+            case 'RenovacionesJob':
                 $payload = $data->id;
                 break;
             case 'InmaterialJob':
